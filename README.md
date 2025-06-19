@@ -2,9 +2,11 @@
 
 This repository contains code and notebook material for a study that used an unsupervised approach to stratify traumatic brain injury (TBI) patients by readmission and mortality risk. The work builds on a research manuscript describing how clustering techniques can reveal subgroups of patients with different outcomes.
 
+The work is discussed in [Stratifying Traumatic Brain Injury Mortality and Readmission Risk: An Unsupervised Machine Learning Approach](https://www.liebertpub.com/doi/full/10.1089/ains.2025.0002).
+
 ## Study Overview
 
-The notebook `TBI_FullHouse_3Clusters.ipynb` performs data preprocessing, clustering and predictive modeling. A cohort of TBI patients is imported from `updated_dataset (1).csv`. Continuous and categorical features are cleaned and standardized before applying **k-means** clustering. The resulting clusters are subsequently used to train an **XGBoost** classifier that predicts 30‑day readmission and mortality. Additional visualisations (see `newplot.png`) compare cluster characteristics and highlight clinically relevant variables.
+The analysis is fully monolithic. The notebook `TBI_FullHouse_3Clusters.ipynb` performs data preprocessing, clustering and predictive modeling. A cohort of TBI patients is imported from `updated_dataset (1).csv`. Continuous and categorical features are cleaned and standardized before applying **k-means** clustering. The resulting clusters are subsequently used to train an **XGBoost** classifier that predicts 30‑day readmission and mortality. Additional visualisations (see `newplot.png`) compare cluster characteristics and highlight clinically relevant variables.
 
 The approach is fully unsupervised for the initial clustering step. Patients are grouped without regard to outcomes, allowing the notebook to identify data‑driven patterns. After cluster assignment, supervised models evaluate whether those groups help differentiate readmission risk. The accompanying manuscript text gives further background on the dataset and details the motivation for using unsupervised learning in this setting.
 
